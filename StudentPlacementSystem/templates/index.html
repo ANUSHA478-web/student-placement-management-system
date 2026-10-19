@@ -1,0 +1,154 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Placement Management System</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f2f5fa;
+            margin: 0;
+            color: #243247;
+        }
+        header {
+            background: #17365d;
+            color: white;
+            padding: 25px;
+            text-align: center;
+        }
+        main {
+            max-width: 900px;
+            margin: 35px auto;
+            padding: 20px;
+        }
+        .panel {
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+            gap: 15px;
+        }
+        .feature {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            border: 1px solid #dce3ed;
+        }
+        h2 { color: #17365d; }
+        footer {
+            text-align: center;
+            padding: 20px;
+            color: #65738a;
+        }
+        
+.menu {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+    margin-top: 25px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 12px 20px;
+    background-color: #2563eb;
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: bold;
+}
+
+.btn:hover {
+    background-color: #1d4ed8;
+}
+
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Student Placement Management System</h1>
+        <p>Manage students, jobs and placement activities</p>
+    </header>
+
+    <main>
+        <section class="panel">
+            <h2>Welcome!</h2>
+            <p>Use this system to manage student placement information.</p>
+            
+<div class="menu">
+    <a href="/students" class="btn">View Student Records</a>
+    <a href="/add-student" class="btn">Add New Student</a>
+    <a href="/search-student" class="btn">Search Student</a>
+</div>
+
+        </section>
+
+        <h2>System Features</h2>
+        <section class="features">
+            
+   <div class="feature">   
+    <h3>Student Management</h3>
+    <p>Manage student records.</p>     
+<a href="/students" class="feature-card">
+    
+    <span class="btn">Manage Students</span>
+</a>
+</div>
+
+     <div class="feature">   
+        <h3>Company Management</h3> 
+         <p>Maintain company information.</p> 
+<a href="/companies" class="btn">Manage Companies</a>
+</div>
+
+            <div class="feature">
+                <h3>Job Opportunities</h3>
+                 <p>Explore available placement opportunities.</p>
+                 <div style="display: flex; flex-direction: column; gap: 12px; align-items: flex-start;">
+                 <a href="/search-job" class="btn">Search Jobs</a>
+                 <a href="/eligible-jobs" class="btn">Find Eligible Jobs</a>
+
+                
+    <a href="/jobs" class="btn">View Jobs</a>
+                 </div>
+</div>
+            </div>
+            
+<div class="feature">
+    <h3>Applications</h3>
+    <p>Manage student applications.</p>
+
+    <div style="display: flex; flex-direction: column; gap: 12px; align-items: flex-start;">
+        <a href="/apply-job" class="btn">Apply for a Job</a>
+        <a href="/applications" class="btn">View Applications</a>
+    </div>
+</div>
+<div class="feature">
+    <h3>Dashboard</h3>
+    <p>View system statistics.</p>
+    <div style="display: flex; flex-direction: column; gap: 12px; align-items: flex-start;">
+    <a href="/dashboard" class="btn">View Dashboard</a>
+    <a href="/placement-report" class="btn">View Placement Report</a>
+    </div>
+</div>
+
+
+                
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        Student Placement Management System
+    </footer>
+</body>
+</html>

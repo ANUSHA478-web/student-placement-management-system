@@ -1,0 +1,23 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Profile</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+    <h1>Student Profile</h1>
+
+    <p><strong>Student ID:</strong> {{ student.student_id }}</p>
+    <p><strong>Name:</strong> {{ student.name }}</p>
+    <p><strong>Email:</strong> {{ student.email }}</p>
+    <p><strong>Branch:</strong> {{ student.branch }}</p>
+    <p><strong>CGPA:</strong> {{ student.cgpa }}</p>
+    <p><strong>Backlogs:</strong> {{ student.backlogs }}</p>
+    <p><strong>Skills:</strong> {{ student.skills }}</p>
+
+    <a href="/students" class="btn">Back to Students</a>
+
+</body>
+</html>

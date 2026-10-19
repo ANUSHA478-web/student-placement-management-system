@@ -1,0 +1,42 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Apply for a Job</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+    <h1>Apply for a Job</h1>
+
+    <form method="POST">
+        <label>Select Student:</label>
+        <select name="student_id" required>
+            {% for student in students %}
+            <option value="{{ student.student_id }}">
+                {{ student.name }} (ID: {{ student.student_id }})
+            </option>
+            {% endfor %}
+        </select>
+
+        <br><br>
+
+        <label>Select Job:</label>
+        <select name="job_id" required>
+            {% for job in jobs %}
+            <option value="{{ job.job_id }}">
+                {{ job.job_role }} (ID: {{ job.job_id }})
+            </option>
+            {% endfor %}
+        </select>
+
+        <br><br>
+
+        <button type="submit">Apply Now</button>
+    </form>
+
+    <br>
+    <a href="/">Back to Home</a>
+
+</body>
+</html>

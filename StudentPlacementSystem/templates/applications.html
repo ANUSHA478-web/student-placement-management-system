@@ -1,0 +1,57 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Applications</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+    <h1>Student Applications</h1>
+    <a href="/export-applications" class="btn">Export Applications to CSV</a>
+
+    <table border="1">
+        <tr>
+            <th>Application ID</th>
+            <th>Student Name</th>
+            <th>Job Role</th>
+            <th>Application Date</th>
+            <th>Status</th>
+            <th>Action</th>
+            <th>Delete</th>
+        </tr>
+
+        {% for application in applications %}
+        <tr>
+            <td>{{ application.application_id }}</td>
+            <td>{{ application.name }}</td>
+            <td>{{ application.job_role }}</td>
+            <td>{{ application.application_date }}</td>
+            <td>{{ application.status }}</td>
+            <td>
+    <a href="/update-application/{{ application.application_id }}">
+        Update Status
+    </a>
+    
+<td>
+    <form action="/delete-application/{{ application.application_id }}"
+          method="POST"
+          onsubmit="return confirm('Are you sure you want to delete this application?');">
+        <button type="submit">Delete</button>
+    </form>
+</td>
+
+</td>
+        </tr>
+        {% else %}
+        <tr>
+            <td colspan="5">No applications available.</td>
+        </tr>
+        {% endfor %}
+    </table>
+
+    <br>
+    <a href="/">Back to Home</a>
+
+</body>
+</html>

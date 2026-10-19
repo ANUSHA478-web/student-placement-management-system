@@ -1,0 +1,152 @@
+
+/* General page design */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 30px;
+    font-family: "Segoe UI", Arial, sans-serif;
+    background: #f3f6fc;
+    color: #1e293b;
+    line-height: 1.6;
+}
+
+/* Main headings */
+h1 {
+    color: #e8eaef;
+    text-align: center;
+    font-size: 34px;
+    margin-bottom: 12px;
+}
+
+h2 {
+    color: #243b80;
+    margin-bottom: 20px;
+}
+
+h3 {
+    color: #3346a8;
+    margin-top: 0;
+}
+
+/* Feature cards */
+.feature {
+    background: #ffffff;
+    padding: 25px;
+    margin: 18px 0;
+    border-radius: 16px;
+    border: 1px solid #e1e8f5;
+    box-shadow: 0 5px 18px rgba(35, 55, 100, 0.08);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.feature:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 25px rgba(35, 55, 100, 0.14);
+}
+
+/* Buttons and links */
+.btn {
+    display: inline-block;
+    background: linear-gradient(135deg, #405de6, #6c63e8);
+    color: #ffffff;
+    padding: 11px 20px;
+    margin: 6px 5px 6px 0;
+    border: none;
+    border-radius: 9px;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.btn:hover {
+    background: linear-gradient(135deg, #3048c5, #5548c8);
+    transform: translateY(-2px);
+}
+
+/* Forms and input fields */
+input,
+select,
+textarea {
+    width: 100%;
+    max-width: 450px;
+    padding: 12px;
+    margin: 7px 0 15px;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    background: #ffffff;
+    font-size: 15px;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    outline: none;
+    border-color: #5268e8;
+    box-shadow: 0 0 0 3px rgba(82, 104, 232, 0.12);
+}
+
+/* Tables */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #ffffff;
+    margin: 20px 0;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(35, 55, 100, 0.06);
+}
+
+th {
+    background: #3346a8;
+    color: #ffffff;
+    padding: 14px;
+    text-align: left;
+}
+
+td {
+    padding: 12px 14px;
+    border-bottom: 1px solid #e8edf5;
+}
+
+tr:hover td {
+    background: #f4f6ff;
+}
+
+/* Mobile-friendly layout */
+@media (max-width: 768px) {
+    body {
+        padding: 15px;
+    }
+
+    h1 {
+        font-size: 26px;
+    }
+
+    table {
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+
+    .feature {
+        padding: 18px;
+    }
+}
+
+.btn {
+    white-space: nowrap;
+    display: inline-block;
+    width: auto;
+    max-width: none;
+    padding: 11px 18px;
+    font-size: 14px;
+}
+
+
+
+

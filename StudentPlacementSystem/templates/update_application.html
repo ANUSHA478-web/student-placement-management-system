@@ -1,0 +1,33 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Update Application Status</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+    <h1>Update Application Status</h1>
+
+    <p>Application ID: {{ application.application_id }}</p>
+    <p>Current Status: {{ application.status }}</p>
+
+    <form method="POST">
+        <label>Select New Status:</label>
+
+        <select name="status" required>
+            <option value="Applied">Applied</option>
+            <option value="Shortlisted">Shortlisted</option>
+            <option value="Selected">Selected</option>
+            <option value="Rejected">Rejected</option>
+        </select>
+
+        <br><br>
+        <button type="submit">Update Status</button>
+    </form>
+
+    <br>
+    <a href="/applications">Back to Applications</a>
+
+</body>
+</html>

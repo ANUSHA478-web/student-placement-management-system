@@ -1,0 +1,52 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Search Jobs</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+    <h1>Search Job Opportunities</h1>
+
+    <form method="POST">
+        <input type="text" name="search_term"
+               placeholder="Enter job role or company name" required>
+        <button type="submit">Search</button>
+    </form>
+
+    <h2>Search Results</h2>
+
+    <table border="1">
+        <tr>
+            <th>Job ID</th>
+            <th>Company</th>
+            <th>Job Role</th>
+            <th>Package (LPA)</th>
+            <th>Minimum CGPA</th>
+            <th>Maximum Backlogs</th>
+        </tr>
+
+        {% for job in jobs %}
+        <tr>
+            <td>{{ job.job_id }}</td>
+            <td>{{ job.company_name }}</td>
+            <td>{{ job.job_role }}</td>
+            <td>{{ job.package_lpa }}</td>
+            <td>{{ job.min_cgpa }}</td>
+            <td>{{ job.max_backlogs }}</td>
+        </tr>
+        {% else %}
+        <tr>
+            <td colspan="6">No matching jobs found.</td>
+        </tr>
+        {% endfor %}
+    </table>
+
+    <br>
+    <a href="/jobs">Back to Jobs</a>
+    <br><br>
+    <a href="/">Back to Home</a>
+
+</body>
+</html>

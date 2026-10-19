@@ -1,0 +1,36 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Update Student</title>
+</head>
+<body>
+    <h1>Update Student</h1>
+
+    <form method="POST">
+        <label>Name:</label>
+        <input name="name" value="{{ student.name }}" required><br><br>
+
+        <label>Email:</label>
+        <input type="email" name="email" value="{{ student.email }}" required><br><br>
+
+        <label>Branch:</label>
+        <input name="branch" value="{{ student.branch }}" required><br><br>
+
+        <label>CGPA:</label>
+        <input type="number" name="cgpa" step="0.01" min="0" max="10"
+               value="{{ student.cgpa }}" required><br><br>
+
+        <label>Backlogs:</label>
+        <input type="number" name="backlogs" min="0"
+               value="{{ student.backlogs }}" required><br><br>
+
+        <label>Skills:</label>
+        <input name="skills" value="{{ student.skills or '' }}"><br><br>
+
+        <button type="submit">Save Changes</button>
+    </form>
+
+    <p><a href="/students">Back to Student Records</a></p>
+</body>
+</html>

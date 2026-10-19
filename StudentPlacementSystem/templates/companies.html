@@ -1,0 +1,62 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Company Management</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <div class="card">
+            <h1>Company Management</h1>
+            <a href="/export-companies" class="btn">Export Companies to CSV</a>
+
+            <p>Manage companies participating in campus placements.</p>
+
+            <p>
+                <a class="btn" href="/add-company">Add New Company</a>
+                <a class="btn" href="/">Home</a>
+            </p>
+
+            {% if companies %}
+            <table>
+                <thead>
+                    <tr>
+                        <th>Company ID</th>
+                        <th>Company Name</th>
+                        <th>Location</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for company in companies %}
+                    <tr>
+                        <td>{{ company.company_id }}</td>
+                        <td>{{ company.company_name }}</td>
+                        <td>{{ company.location }}</td>
+                        <td>
+                            <a href="/update-company/{{ company.company_id }}">
+                                Edit
+                            </a>
+
+                            <form
+                                method="POST"
+                                action="/delete-company/{{ company.company_id }}"
+                                onsubmit="return confirm('Delete this company?');"
+                            >
+                                <button type="submit">Delete</button>
+                            </form>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+            {% else %}
+                <p>No companies found. Use Add New Company to register one.</p>
+            {% endif %}
+        </div>
+    </div>
+</body>
+</html>

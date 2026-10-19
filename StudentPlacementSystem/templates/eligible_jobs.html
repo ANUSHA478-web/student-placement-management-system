@@ -1,0 +1,58 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Eligible Jobs</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+    <h1>Find Eligible Jobs</h1>
+
+    <form method="POST">
+        <label>Select Student:</label>
+
+        <select name="student_id" required>
+            {% for student in students %}
+            <option value="{{ student.student_id }}">
+                {{ student.name }} (ID: {{ student.student_id }})
+            </option>
+            {% endfor %}
+        </select>
+
+        <button type="submit">Find Eligible Jobs</button>
+    </form>
+
+    <h2>Matching Opportunities</h2>
+
+    <table border="1">
+        <tr>
+            <th>Job ID</th>
+            <th>Company</th>
+            <th>Job Role</th>
+            <th>Package (LPA)</th>
+            <th>Minimum CGPA</th>
+            <th>Maximum Backlogs</th>
+        </tr>
+
+        {% for job in jobs %}
+        <tr>
+            <td>{{ job.job_id }}</td>
+            <td>{{ job.company_name }}</td>
+            <td>{{ job.job_role }}</td>
+            <td>{{ job.package_lpa }}</td>
+            <td>{{ job.min_cgpa }}</td>
+            <td>{{ job.max_backlogs }}</td>
+        </tr>
+        {% else %}
+        <tr>
+            <td colspan="6">No eligible jobs found.</td>
+        </tr>
+        {% endfor %}
+    </table>
+
+    <br>
+    <a href="/">Back to Home</a>
+
+</body>
+</html>

@@ -1,0 +1,46 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Placement Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+    <h1>Placement Management Dashboard</h1>
+
+    <div class="feature">
+        <h3>Total Students</h3>
+        <p>{{ total_students }}</p>
+    </div>
+
+    <div class="feature">
+        <h3>Total Companies</h3>
+        <p>{{ total_companies }}</p>
+    </div>
+
+    <div class="feature">
+        <h3>Total Jobs</h3>
+        <p>{{ total_jobs }}</p>
+    </div>
+
+    <div class="feature">
+        <h3>Total Applications</h3>
+        <p>{{ total_applications }}</p>
+    </div>
+
+    <div class="feature">
+        <h3>Selected Applications</h3>
+        <p>{{ total_selected }}</p>
+    </div>
+
+    <div class="feature">
+        <h3>Shortlisted Applications</h3>
+        <p>{{ total_shortlisted }}</p>
+    </div>
+
+    <br>
+    <a href="/" class="btn">Back to Home</a>
+
+</body>
+</html>

@@ -1,0 +1,38 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Company</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <div class="card">
+            <h1>Add New Company</h1>
+
+            <form method="POST" action="/add-company">
+                <label for="company_name">Company Name</label>
+                <input
+                    type="text"
+                    id="company_name"
+                    name="company_name"
+                    required
+                >
+
+                <label for="location">Company Location</label>
+                <input
+                    type="text"
+                    id="location"
+                    name="location"
+                    required
+                >
+
+                <button type="submit">Save Company</button>
+                <a class="btn" href="/companies">Back to Companies</a>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
